@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title">Welcome to Day 7</h1>
+    <div id="greeting"></div>
+    <button onclick="ChangeColor('Sommai')">Click Me</button>
+
+    <input type="text" id="inputText" />
+    <button onclick="addElement()">Add Element</button>
+    <div id="result"></div>
+
+    <script src="script.js"></script>
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/todos')
+            .then(response => response.json())
+            .then(json => {
+                console.log(json)
+                let result = document.getElementById('result');
+
+                json.forEach(item => {
+                    let div = document.createElement('div');
+                    div.innerHTML = `ID: ${item.id}, Title: ${item.title}`;
+                    result.appendChild(div);
+                });
+            })
+
+        function addElement() {
+            let div = document.createElement('h1');
+            div.innerHTML = document.getElementById('inputText').value;
+            document.getElementById('result').appendChild(div);
+        }
+    </script>
+</body>
+
+</html>
