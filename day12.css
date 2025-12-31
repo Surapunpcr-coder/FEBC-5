@@ -1,0 +1,52 @@
+body{
+  margin:0;
+    font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  padding:4rem;
+  background-color: #81817c;
+}
+h2,p{
+  margin:0;
+  padding:8px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+  grid-template-rows:auto;
+  gap:10px;
+}
+
+.card{
+  background-color:white;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.bg-img{
+  background-image:url('https://storage.borntodev.com/academy/content/810x607-vLbaMHYqFcE4gj6bxZs2BV_2zEStea-aeLmc_HysmhkYjIXAikX1Cj1n_9yrD.webp');
+  height:100%;
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  padding-bottom:74%;
+  
+}
+.item-big{
+  grid-column: 2 / span 2;
+  grid-row:1 / span 2;
+}
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:4px;
+  margin: .5rem;
+}
+.tag-item{
+  padding:.25rem .75rem;
+  background:#ffc100;
+  border-radius:1rem;
+}
